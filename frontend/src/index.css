@@ -109,3 +109,57 @@ code {
   padding: 4px 8px;
   background: var(--code-bg);
 }
+
+/* Toast Notification Container */
+.toast-container {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Base Toast Style (Success Theme) */
+.toast {
+  background: #151c2c;
+  border: 1px solid #232d42;
+  border-left: 4px solid #10b981; /* MongoDB Emerald Green */
+  padding: 0.8rem 1.2rem;
+  border-radius: 6px;
+  color: #f8fafc;
+  font-size: 0.88rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  animation: slideIn 0.25s ease forwards;
+  transition: all 0.3s ease;
+}
+
+.toast i {
+  color: #10b981;
+  font-size: 1rem;
+}
+
+/* Error State Style */
+.toast-error {
+  border-left-color: #ef4444; /* Danger Red */
+}
+
+.toast-error i {
+  color: #ef4444;
+}
+
+/* Slide-in Animation */
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
